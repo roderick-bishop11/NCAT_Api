@@ -1,0 +1,14 @@
+{
+  "NC_HBCUs": [
+    {"name":  "Barber-Scotia College", "City": "Concord"},
+    {"name":  "Bennett College", "City": "Greensboro"},
+    {"name":  "Elizabeth City State University", "City": "Elizabeth City"},
+    {"name":  "Fayetteville State", "City": "Fayetteville"},
+    {"name":  "Johnson C. Smith University", "City": "Charlotte"},
+    {"name":  "Livingstone College", "City": "Salisbury"},
+    {"name":  "North Carolina Central State University", "City": "Durham"},
+    {"name":  "St. Augustine University", "City": "Raleigh"},
+    {"name":  "Shaw University", "City": "Raleigh"},
+    {"name":  "Winston-Salem State University", "City": "Winston-Salem"}
+  ]
+}

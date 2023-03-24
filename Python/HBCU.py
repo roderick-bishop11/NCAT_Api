@@ -1,0 +1,3 @@
+class HBCU:
+    name = ""
+    city = ""
