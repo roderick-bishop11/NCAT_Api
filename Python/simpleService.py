@@ -1,9 +1,6 @@
-import json
+# not implemented
 
-import HBCU, repo
+class simpleService:
 
-def addWithoutSpaces(someCollege):
-   collegeWithoutSpaces = ""
-   repo.addOne(collegeWithoutSpaces)
-   return
-
+    def someMethod(self):
+        return

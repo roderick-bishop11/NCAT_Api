@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.HBCU.DemoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-22T19:28:25" hostname="Rodericks-Mini" time="0.099">
-  <properties/>
-  <testcase name="test the server is running" classname="com.HBCU.DemoTest" time="0.099"/>
-  <system-out><![CDATA[?[36m14:28:25.149?[0;39m ?[1;30m[pool-1-thread-1 @coroutine#3]?[0;39m ?[34mINFO ?[0;39m ?[35mi.m.context.env.DefaultEnvironment?[0;39m - Established active environments: [test]
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

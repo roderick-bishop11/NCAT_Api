@@ -1,9 +1,10 @@
 from flask import *
-import repo, simpleService
+import repo
 
 app = Flask(__name__)
 
 
+# base route
 @app.route('/', methods=['GET'])
 def home_page():
     return "Hello World"
@@ -12,7 +13,6 @@ def home_page():
 @app.route('/HBCU', methods=['GET'])
 def getOneCollege():
     name = request.args.get('name') or None
-    print(name)
     if name is None:
         return repo.findAll()
     else:
@@ -22,26 +22,23 @@ def getOneCollege():
 @app.route('/HBCU', methods=['POST'])
 def postOneCollege():
     newCollege = request.json
-    resp = repo.addOne(newCollege)
-    return resp
+    response = repo.addOne(newCollege)
+    return response
 
 
 @app.route('/HBCU', methods=['DELETE'])
 def deleteOneCollege():
     deletedCollege = request.json
-    resp = repo.deleteOne(deletedCollege)
-    return resp
+    response = repo.deleteOne(deletedCollege)
+    return response
 
-@app.route('/HBCU', methods=['PATCH'])
+
+@app.route('/HBCU', methods=['PUT'])
 def patchOneCollege():
     patch = request.json
-    resp = repo.patchOne(patch)
-    return resp
+    response = repo.putOne(patch)
+    return response
 
-def postOneWithoutSpaces():
-    newCollege = request.json
-    resp = simpleService.addWithoutSpaces(newCollege)
-    return resp
 
 if __name__ == '__main__':
     app.run(port=8080)

@@ -1,47 +1,50 @@
-from flask import jsonify
+datasource = [
+    {"name": "Barber-Scotia College", "City": "Concord"},
+    {"name": "Bennett College", "City": "Greensboro"},
+    {"name": "Elizabeth City State University", "City": "Elizabeth City"},
+    {"name": "Fayetteville State", "City": "Fayetteville"},
+    {"name": "Johnson C. Smith University", "City": "Charlotte"},
+    {"name": "Livingstone College", "City": "Salisbury"},
+    {"name": "North Carolina Central State University", "City": "Durham"},
+    {"name": "St. Augustine University", "City": "Raleigh"},
+    {"name": "Shaw University", "City": "Raleigh"},
+    {"name": "Winston-Salem State University", "City": "Winston-Salem"}
+]
 
-data = [
-        {"name": "Barber-Scotia College", "City": "Concord"},
-        {"name": "Bennett College", "City": "Greensboro"},
-        {"name": "Elizabeth City State University", "City": "Elizabeth City"},
-        {"name": "Fayetteville State", "City": "Fayetteville"},
-        {"name": "Johnson C. Smith University", "City": "Charlotte"},
-        {"name": "Livingstone College", "City": "Salisbury"},
-        {"name": "North Carolina Central State University", "City": "Durham"},
-        {"name": "St. Augustine University", "City": "Raleigh"},
-        {"name": "Shaw University", "City": "Raleigh"},
-        {"name": "Winston-Salem State University", "City": "Winston-Salem"}
-    ]
 
-#get
+# get
 def findOne(name):
     selected = None
-    for i in range(len(data)):
-        if data[i].get('name') == name:
-            selected = data[i]
+    for i in range(len(datasource)):
+        if datasource[i].get('name') == name:
+            selected = datasource[i]
             break
     if selected is None:
-            return f"No college found with the name {name}"
+        return f"No college found with the name {name}"
     else:
         return selected
 
-#get
+
+# get
 def findAll():
-    return data
+    return datasource
 
-#post
+
+# post
 def addOne(newCollege):
-    data.append(newCollege)
+    datasource.append(newCollege)
     return findAll()
 
-#delete
+
+# delete
 def deleteOne(valueToDelete):
-    data.remove(valueToDelete)
+    datasource.remove(valueToDelete)
     return findAll()
 
-#patch
-def patchOne(someCollege):
+
+# put
+def putOne(someCollege):
     college = findOne(someCollege['name'])
-    data.remove(college)
-    data.append(someCollege)
+    datasource.remove(college)
+    datasource.append(someCollege)
     return findAll()
